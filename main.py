@@ -11,7 +11,7 @@ for k in range(n + 1):
     x.append(int(input(f"Enter x[{k}] : ")))
     y.append(int(input(f"Enter y[{k}] : ")))
 
-
+# floating point error
 def fr(p):
     for c in range(len(p.coef)):
         p.coef[c] = numpy.round(p.coef[c], 5)
