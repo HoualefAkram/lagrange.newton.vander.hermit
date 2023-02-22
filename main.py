@@ -2,19 +2,22 @@ import numpy
 from numpy.polynomial import Polynomial as Poly
 
 
-q = int(input("1) Lagrange\n2) Newton\n3) Vandernonde\n4) Hermit\nChoose a method : "))  # NOQA
+q = int(input("1) Lagrange\n2) Newton\n3) Vandernonde\n4) Hermite\nChoose a method : "))  # NOQA
 n = int(input("order of the function: "))
 
 x = []
 y = []
 for k in range(n + 1):
-    x.append(int(input(f"Enter x[{k}] : ")))
-    y.append(int(input(f"Enter y[{k}] : ")))
+    x.append((input(f"Enter x[{k}] : ")))
+    y.append((input(f"Enter y[{k}] : ")))
+    
+x = list(map(lambda x : float(x),x))
+y = list(map(lambda x : float(x),y))
 
-# floating point error
+ #floating point error
 def fr(p):
     for c in range(len(p.coef)):
-        p.coef[c] = numpy.round(p.coef[c], 5)
+        p.coef[c] = numpy.round(p.coef[c], 6)
     return p
 
 
